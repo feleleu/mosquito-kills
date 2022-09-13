@@ -10,7 +10,9 @@
     </head>
     <body onresize="adjustsStageSizeGame()">
         <script>
-            randomPosition();
+            setInterval(function() {
+                randomPosition();
+            }, 1000)
         </script>
     </body>
 </html>

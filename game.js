@@ -16,6 +16,12 @@ function adjustsStageSizeGame() {
 adjustsStageSizeGame();
 
 function randomPosition() {
+
+  // remove previous mosquito (if any)
+  if(document.getElementById('mosquito')){
+    document.getElementById('mosquito').remove();
+  }
+
   positionX = Math.floor(Math.random() * width) - 90;
   positionY = Math.floor(Math.random() * height) - 90;
 
@@ -28,6 +34,8 @@ function randomPosition() {
   mosquito.style.left = positionX + "px";
   mosquito.style.top = positionY + "px";
   mosquito.style.position = "absolute";
+  mosquito.id = 'mosquito'
+
   document.body.appendChild(mosquito);
 
   randomSize();
