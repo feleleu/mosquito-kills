@@ -6,6 +6,7 @@ var positionY;
 
 var mosquito;
 var sizeMosquito;
+var sideMosquito;
 
 function adjustsStageSizeGame() {
   height = window.innerHeight;
@@ -23,13 +24,14 @@ function randomPosition() {
 
   mosquito = document.createElement("img");
   mosquito.src = "assets/mosca.png";
-  mosquito.className = randomSize();
+  mosquito.className = randomSize() +' '+ randomSide();
   mosquito.style.left = positionX + "px";
   mosquito.style.top = positionY + "px";
   mosquito.style.position = "absolute";
   document.body.appendChild(mosquito);
 
   randomSize();
+  randomSide();
 }
 
 function randomSize() {
@@ -37,10 +39,21 @@ function randomSize() {
 
   switch (sizeMosquito) {
     case 0:
-      return 'mosquitoSmall'
+      return "mosquitoSmall";
     case 1:
-      return 'mosquitoNormal'
+      return "mosquitoNormal";
     case 2:
-      return 'mosquitoLarge'
+      return "mosquitoLarge";
+  }
+}
+
+function randomSide() {
+  sideMosquito = Math.floor(Math.random() * 2);
+
+  switch (sideMosquito) {
+    case 0:
+      return "sideLeft";
+    case 1:
+      return "sideRight";
   }
 }
