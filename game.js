@@ -8,6 +8,8 @@ var mosquito;
 var sizeMosquito;
 var sideMosquito;
 
+var lives = 3;
+
 function adjustsStageSizeGame() {
   height = window.innerHeight;
   width = window.innerWidth;
@@ -20,6 +22,13 @@ function randomPosition() {
   // remove previous mosquito (if any)
   if(document.getElementById('mosquito')){
     document.getElementById('mosquito').remove();
+
+    if(lives === 0){
+      alert('Game Over')
+    } else {
+      document.getElementById('life' + lives).src = "./assets/coracao_vazio.png";
+      lives--;
+    }
   }
 
   positionX = Math.floor(Math.random() * width) - 90;
@@ -28,13 +37,17 @@ function randomPosition() {
   positionX = positionX < 0 ? 0 : positionX;
   positionY = positionY < 0 ? 0 : positionY;
 
+  // creating element 
   mosquito = document.createElement("img");
   mosquito.src = "assets/mosca.png";
   mosquito.className = randomSize() +' '+ randomSide();
   mosquito.style.left = positionX + "px";
   mosquito.style.top = positionY + "px";
   mosquito.style.position = "absolute";
-  mosquito.id = 'mosquito'
+  mosquito.id = 'mosquito';
+  mosquito.onclick = function() {
+    this.remove();
+  }
 
   document.body.appendChild(mosquito);
 
