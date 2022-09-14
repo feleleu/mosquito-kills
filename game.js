@@ -9,7 +9,7 @@ var sizeMosquito;
 var sideMosquito;
 
 var lives = 3;
-var time = 3;
+var time = 10;
 
 function adjustsStageSizeGame() {
   height = window.innerHeight;
@@ -24,6 +24,7 @@ var countdown = setInterval (function() {
   if(time < 0){
     clearInterval(countdown);
     clearInterval(createMosquito);
+    window.location.href = "./pages/victory.html"
   } else {
     document.getElementById('countdown').innerHTML = time;
   }
