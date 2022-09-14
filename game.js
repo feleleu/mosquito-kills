@@ -24,7 +24,7 @@ function randomPosition() {
     document.getElementById('mosquito').remove();
 
     if(lives === 0){
-      alert('Game Over')
+      window.location.href = "./pages/end-of-the-game.html"
     } else {
       document.getElementById('life' + lives).src = "./assets/coracao_vazio.png";
       lives--;
