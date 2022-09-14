@@ -9,6 +9,7 @@ var sizeMosquito;
 var sideMosquito;
 
 var lives = 3;
+var time = 3;
 
 function adjustsStageSizeGame() {
   height = window.innerHeight;
@@ -16,6 +17,17 @@ function adjustsStageSizeGame() {
 }
 
 adjustsStageSizeGame();
+
+var countdown = setInterval (function() {
+  time -= 1;
+
+  if(time < 0){
+    clearInterval(countdown);
+    clearInterval(createMosquito);
+  } else {
+    document.getElementById('countdown').innerHTML = time;
+  }
+}, 1000)
 
 function randomPosition() {
 
