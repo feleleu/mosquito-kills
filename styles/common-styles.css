@@ -1,6 +1,10 @@
 @import "./themes/theme.css";
 @import "./themes/typography.css";
 
+html {
+  cursor: url(../assets/mata_mosquito.png) 30 30, auto;
+}
+
 body {
     padding: 0;
     margin: 0;

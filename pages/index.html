@@ -17,6 +17,8 @@
                 alert('Selecione um nível para iniciar o jogo!')
                 return false;
             }
+
+            window.location.href = "../app.html?" + level;
         }
     </script>
   </head>
@@ -32,9 +34,9 @@
             <div class="col d-flex align-items-center justify-content-center">
                 <select id="level" class="form-select w-auto" aria-label="Default select example">
                     <option selected value="">Selecione o nível</option>
-                    <option value="normal">Normal</option>
-                    <option value="hard">Difícil</option>
-                    <option value="veryHard">Muito Difícil</option>
+                    <option value="NORMAL">Normal</option>
+                    <option value="HARD">Difícil</option>
+                    <option value="VERY_HARD">Muito Difícil</option>
                 </select>
             </div>
         </div>
