@@ -5,20 +5,18 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Mosquito Kills</title>
-        <link rel="stylesheet" href="./style.css" />
-        <script src="./game.js"></script>
+        <link rel="stylesheet" href="../style.css" />
+        <script src="../game.js"></script>
     </head>
     <body onresize="adjustsStageSizeGame()">
         <div class="container-dashboard">
             <div class="container-lives">
-                <img id="life1" src="./assets/coracao_cheio.png">
-                <img id="life2" src="./assets/coracao_cheio.png">
-                <img id="life3" src="./assets/coracao_cheio.png">
+                <img id="life1" src="../assets/coracao_cheio.png">
+                <img id="life2" src="../assets/coracao_cheio.png">
+                <img id="life3" src="../assets/coracao_cheio.png">
             </div>
             
             <div class="container-countdown">Tempo Restante: <span id="countdown"></span></div>
-
-            </div>
         </div>
         <script>
             document.getElementById('countdown').innerHTML = time;
